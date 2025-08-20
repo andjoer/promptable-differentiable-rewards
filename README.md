@@ -6,6 +6,31 @@ It is possible to perform aesthetic ratings based on the model’s internal aest
 Furthermore, the model can rate the stylistic similarity of two images, enabling training of a new style using only a single reference image.
 This repository also includes several loss functions that penalize the typical grid patterns occurring during Flux training. When applied with medium strength, these losses are effective. However, when applied strongly, it is recommended to add an additional loss that penalizes brightness drift.
 
+## Examples
+
+### Style transfer from a single reference
+
+<p align="center">
+  <img src="media/reference.png" alt="Style reference, generated with Midjourney" width="420">
+</p>
+
+| Before | After |
+|:-----:|:-----:|
+| <img src="media/before_1.png" width="420"> | <img src="media/after_1.png" width="420"> |
+| <img src="media/before_2.png" width="420"> | <img src="media/after_2.png" width="420"> |
+| <img src="media/before_3.png" width="420"> | <img src="media/after_3.png" width="420"> |
+
+Notes:
+- The reference is used to reward stylistic similarity (lighting, colors, contrast, overall look) while preserving content.
+- Source of first two inputs: ffhq, Source of last input: PPR10K
+### Grid pattern artifact (when optimizing with AIDE photorealism)
+
+<p align="center">
+  <img src="media/grid_pattern.png" alt="Grid pattern artifact" width="720">
+</p>
+
+This grid-like periodic artifact can occur when photorealism (AIDE) is over-optimized without sufficient anti-grid or brightness/contrast anchoring.
+
 ## Features
 
 This repository provides:
@@ -27,21 +52,16 @@ cd promptable-differentiable-rewards
 pip install -r requirements.txt
 ```
 
-### TRL Installation
-
-Install TRL from source for AlignProp support:
-
-```bash
-pip install git+https://github.com/huggingface/trl.git
-```
-
 ### Optional Dependencies
 
 For specific features, install additional packages:
 
 ```bash
-# Face similarity rewards
+# Face similarity rewards (you might need to update torch and torchvision afterwards again)
 pip install facenet-pytorch
+
+# LIPS similarity rewards
+pip install lpips
 
 # AIDE photorealism detection
 git clone https://github.com/shilinyan99/AIDE.git
