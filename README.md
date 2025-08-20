@@ -47,7 +47,7 @@ This repository provides:
 ### Basic Installation
 
 ```bash
-git clone https://github.com/youruser/promptable-differentiable-rewards.git
+git clone https://github.com/andjoer/promptable-differentiable-rewards.git
 cd promptable-differentiable-rewards
 pip install -r requirements.txt
 ```
