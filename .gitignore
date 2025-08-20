@@ -1,0 +1,39 @@
+cat > .gitignore << 'EOF'
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+*.pyo
+*.egg-info/
+.eggs/
+dist/
+build/
+pip-wheel-metadata/
+.pytest_cache/
+.coverage*
+htmlcov/
+.mypy_cache/
+.pytype/
+ipynb_checkpoints/
+.env
+.venv
+env/
+venv/
+
+# IDEs / editors
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Data/artifacts
+debug_images/
+preproc_debug/
+EOF
