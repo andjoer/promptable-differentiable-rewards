@@ -60,7 +60,7 @@ For specific features, install additional packages:
 # Face similarity rewards (you might need to update torch and torchvision afterwards again)
 pip install facenet-pytorch
 
-# LIPS similarity rewards
+# LPIPS similarity rewards
 pip install lpips
 
 # AIDE photorealism detection
