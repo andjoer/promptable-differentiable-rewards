@@ -23,13 +23,13 @@ This repository also includes several loss functions that penalize the typical g
 Notes:
 - The reference is used to reward stylistic similarity (lighting, colors, contrast, overall look) while preserving content.
 - Source of first two inputs: ffhq, Source of last input: PPR10K
-### Grid pattern artifact (when optimizing with AIDE photorealism)
+### Grid pattern artifact
 
 <p align="center">
   <img src="media/grid_pattern.png" alt="Grid pattern artifact" width="720">
 </p>
 
-This grid-like periodic artifact can occur when photorealism (AIDE) is over-optimized without sufficient anti-grid or brightness/contrast anchoring.
+This grid-like periodic artifact can especially occur when photorealism (AIDE) is over-optimized.
 
 ## Features
 
